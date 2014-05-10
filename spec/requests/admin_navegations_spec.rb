@@ -4,7 +4,8 @@ describe "AdminNavegations" do
   describe "Home" do
     it "Should have the content 'Bienvenido al sistema de administracion!'" do
       visit '/admin_navegation/home'
-      expect(page).to have_title('Loockea administracion | Home')
+      expect(page).not_to have_title('| Home')
+      expect(page).to have_title('Loockea administracion')
       expect(page).to have_content('Bienvenido al sistema de administracion!')
     end
   end
