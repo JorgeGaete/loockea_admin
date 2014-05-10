@@ -1,4 +1,10 @@
 LoockeaAdmin::Application.routes.draw do
+  
+  get "admin_navegation/home"
+  get "admin_navegation/help"
+  get "admin_navegation/campanas"
+  get "admin_navegation/contenidos"
+  get "admin_navegation/perfiles"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
