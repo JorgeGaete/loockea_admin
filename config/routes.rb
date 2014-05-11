@@ -1,10 +1,21 @@
 LoockeaAdmin::Application.routes.draw do
   
-  get "admin_navegation/home"
-  get "admin_navegation/help"
-  get "admin_navegation/campanas"
-  get "admin_navegation/contenidos"
-  get "admin_navegation/perfiles"
+
+  root  'admin_navegation#home'
+  
+  match '/help',      to: 'admin_navegation#help',      via: 'get'
+  match '/campanas',  to: 'admin_navegation#campanas',  via: 'get'
+  match '/contenidos',to: 'admin_navegation#contenidos',via: 'get'
+  match '/perfiles',  to: 'admin_navegation#perfiles',  via: 'get'
+  
+  match '/signup',  to: 'admins#new',  via: 'get'
+  
+  #get "admin_navegation/home"
+  #get "admin_navegation/help"
+  #get "admin_navegation/campanas"
+  #get "admin_navegation/contenidos"
+  #get "admin_navegation/perfiles"
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

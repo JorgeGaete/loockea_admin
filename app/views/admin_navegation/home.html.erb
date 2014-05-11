@@ -1,9 +1,11 @@
-<body>
+<div class="center hero-unit">
 	<h1>Bienvenido al sistema de administracion!</h1>
-	<p>
-		Find me in app/views/admin_navegation/home.html.erb
-	</p>
-</body>
-<footer>
-</footer>
+	<h2>
+		Loockea tu panatalla y dejate de pesca's
+	</h2>
+	
+	  <%= link_to "Ingresa!", '*', class: "btn btn-large btn-primary" %>
+	  <%= link_to "Registrate!", signup_path, class: "btn btn-large btn-primary" %>
+</div>
 
+<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>

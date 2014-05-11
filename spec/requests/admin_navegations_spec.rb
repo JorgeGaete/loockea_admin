@@ -1,45 +1,48 @@
 require 'spec_helper'
 
 describe "AdminNavegations" do
+  
+  subject {page}
+  
   describe "Home" do
-    it "Should have the content 'Bienvenido al sistema de administracion!'" do
-      visit '/admin_navegation/home'
-      expect(page).not_to have_title('| Home')
-      expect(page).to have_title('Loockea administracion')
-      expect(page).to have_content('Bienvenido al sistema de administracion!')
-    end
+    before { visit root_path }
+    
+    it { should_not have_title('| Home') }
+    it { should have_title('Loockea administracion') }
+    it { should have_content('Bienvenido al sistema de administracion!') }
+    
   end
   
   describe "help" do
-    it "Should have the content 'Dudas'?'" do
-      visit '/admin_navegation/help'
-      expect(page).to have_title('Loockea administracion | Help')
-      expect(page).to have_content('Dudas?')
-    end
+    before { visit help_path }
+      
+    it { should have_title('Loockea administracion | Help') }
+    it { should have_content('Dudas?') }
+    
   end
   
   describe "campanas" do
-    it "Should have the content 'Campanas'" do
-      visit '/admin_navegation/campanas'
-      expect(page).to have_title('Loockea administracion | Campanas')
-      expect(page).to have_content('Administracion de Campanas')
-    end
+    before { visit campanas_path }
+    
+    it { should have_title('Loockea administracion | Campanas') }
+    it { should have_content('Administracion de Campanas') }
+    
   end
   
   describe "contenidos" do
-    it "Should have the content 'Contenidos'" do
-      visit '/admin_navegation/contenidos'
-      expect(page).to have_title('Loockea administracion | Contenidos')
-      expect(page).to have_content('Administracion de Contenidos')
-    end
+    before { visit contenidos_path }
+    
+    it { should have_title('Loockea administracion | Contenidos') }
+    it { should have_content('Administracion de Contenidos') }
+
   end
   
   describe "perfiles" do
-    it "Should have the content 'Perfiles'" do
-      visit '/admin_navegation/perfiles'
-      expect(page).to have_title('Loockea administracion | Perfiles')
-      expect(page).to have_content('Administracion de Perfiles')
-    end
+    before {visit perfiles_path}
+    
+    it { should have_title('Loockea administracion | Perfiles') }
+    it { should have_content('Administracion de Perfiles') }
+    
   end
   
 end
