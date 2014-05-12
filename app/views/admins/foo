@@ -1,0 +1,6 @@
+<%= provide(:title, 'Administradors')%>
+<h1>Listado de administradores</h1>
+<%= @admin.name%>, <%= @admin.email%>
+<p>Find me in app/views/admins/new.html.erb</p>
+
+git mv app/views/admins/show.html.erb foo

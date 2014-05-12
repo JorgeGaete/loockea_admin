@@ -1,5 +1,6 @@
 LoockeaAdmin::Application.routes.draw do
-  
+
+  resources :admins
 
   root  'admin_navegation#home'
   
