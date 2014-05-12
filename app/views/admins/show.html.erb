@@ -1,0 +1,13 @@
+<%= provide(:title, @admin.name)%>
+
+<div class="row">
+	<aside class="span4">
+		<section>
+			<h2>Listado de administradores</h2>
+			<h1>
+				<%= gravatar_for @admin%>
+				<%= @admin.name%>
+			</h1>
+		</section>
+	</aside>
+</div>

@@ -94,6 +94,5 @@ describe Admin do
         it { should_not eq user_for_invalid_password }
         specify { expect(user_for_invalid_password).to be_false }
       end
-    end
-  
+    end  
 end
