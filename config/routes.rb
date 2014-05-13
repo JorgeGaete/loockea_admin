@@ -1,6 +1,7 @@
 LoockeaAdmin::Application.routes.draw do
 
   resources :admins
+  resources :sessions, only: [:new, :create, :destroy]
 
   root  'admin_navegation#home'
   
@@ -9,16 +10,11 @@ LoockeaAdmin::Application.routes.draw do
   match '/contenidos',to: 'admin_navegation#contenidos',via: 'get'
   match '/perfiles',  to: 'admin_navegation#perfiles',  via: 'get'
   
-  match '/signup',  to: 'admins#new',  via: 'get'
-  #match '/admins',  to: 'admins#show',  via: 'get'
+  match '/signup',    to: 'admins#new',                 via: 'get'
   
-  #get "admin_navegation/home"
-  #get "admin_navegation/help"
-  #get "admin_navegation/campanas"
-  #get "admin_navegation/contenidos"
-  #get "admin_navegation/perfiles"
+  match '/signin',    to: 'sessions#new',               via: 'get'
+  match '/signout',   to: 'sessions#destroy',          via: 'delete'
   
-  # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"

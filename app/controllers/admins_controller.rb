@@ -7,6 +7,7 @@ class AdminsController < ApplicationController
   def create
     @admin = Admin.new(admin_params)
     if @admin.save
+      sign_in @admin
       flash[:success] = "Bienvenido al sistema de administracion!"
       redirect_to @admin
     else
