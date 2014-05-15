@@ -1,0 +1,12 @@
+<% provide(:title, 'Todos los administradores') %>
+<h1>Todos los administradores</h1>
+
+<%= will_paginate %>
+
+<ul class="users">
+  <% @admins.each do |admin| %>
+    <%= render admin %>
+  <% end %>
+</ul>
+
+<%= will_paginate %>

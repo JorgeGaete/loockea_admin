@@ -14,8 +14,19 @@ describe Admin do
   it{ should respond_to(:password_confirmation) }
   it{ should respond_to(:remember_token) }
   it{ should respond_to(:authenticate) }
+  it { should respond_to(:super_admin) }
   
   it{ should be_valid }
+  it { should_not be_super_admin }
+  
+  describe "with super_admin attribute set to 'true'" do
+    before do
+      @admin.save!
+      @admin.toggle!(:super_admin)
+    end
+    
+    it { should be_super_admin }
+  end
   
   describe "when name is not present" do
     before { @admin.name = " " }

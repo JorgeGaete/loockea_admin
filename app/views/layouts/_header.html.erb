@@ -7,7 +7,7 @@
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Help", help_path %></li>
           <% if signed_in? %>
-            <li><%= link_to "Users", '#' %></li>
+            <li><%= link_to "Admins", admins_path %></li>
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Account <b class="caret"></b>
@@ -17,7 +17,7 @@
 				<li><%= link_to "Campanas", campanas_path %></li>
 				<li><%= link_to "Contenidos", contenidos_path %></li>
                 <li><%= link_to "Perfiles", perfiles_path %></li>
-                <li><%= link_to "Settings", '#' %></li>
+                <li><%= link_to "Settings", edit_admin_path(current_admin) %></li>
                 <li class="divider"></li>
                 <li>
                   <%= link_to "Sign out", signout_path, method: "delete" %>

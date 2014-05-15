@@ -11,9 +11,8 @@ LoockeaAdmin::Application.routes.draw do
   match '/perfiles',  to: 'admin_navegation#perfiles',  via: 'get'
   
   match '/signup',    to: 'admins#new',                 via: 'get'
-  
   match '/signin',    to: 'sessions#new',               via: 'get'
-  match '/signout',   to: 'sessions#destroy',          via: 'delete'
+  match '/signout',   to: 'sessions#destroy',           via: 'delete'
   
   # See how all your routes lay out with "rake routes".
 

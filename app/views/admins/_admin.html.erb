@@ -1,0 +1,7 @@
+<li>
+  <%= gravatar_for admin, size: 52 %>
+  <%= link_to admin.name, admin %>
+  <% if current_admin.super_admin? && !current_admin?(admin) %>
+  	| <%= link_to "eliminar", admin, method: :delete, data: { confirm: "Segurolas?" } %>
+	<% end %>
+</li>
