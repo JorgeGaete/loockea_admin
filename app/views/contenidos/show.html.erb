@@ -1,0 +1,45 @@
+<%= provide(:title, @contenido.name)%>
+
+<div class="row">
+	<aside class="span4">
+		<section>
+			<h1>
+				<p> 
+					Contenidos
+				</p>	
+			</h1>
+			
+			<span><%= link_to "Ir a contenidos", contenidos_path %></span>
+			<span><%= link_to "Ir a campana", campana_path(@contenido.campana_id) %></span>
+			<span><%= link_to "Ir a todas las campanas", campanas_path %></span>
+	
+		</section>
+	</aside>
+	<aside class="span4">
+		<section>
+			<h1> 
+				Detalles del contenido <%= @contenido.name %>
+			</h1>
+
+			<span>Tipo: 				<%= @contenido.tipo %></span>
+			<span>Id de campana: 		<%= @contenido.campana_id %></span>
+			<span>Proveedor:	 		<%= @contenido.provider %></span>
+			<span>Id de Categoria: 		<%= @contenido.category_id %></span>
+			<span>Fecha de creacion:	<%= @contenido.created_at %></span>
+			<span>Fecha de fin: 		<%= @contenido.end_date %></span>
+			<span>Estatus: 				<%= @contenido.status %></span>
+
+			
+			<span><%= link_to "Editar este Contenido", edit_contenido_path(@contenido)%></span>
+		</section>
+	</aside>
+	<aside>
+		<section class="span4">
+			<p>
+				<%= image_tag @contenido.imagen.url %>
+				<%#= image_tag @contenido.imagen.url(:medium) %>
+				<%#= image_tag @contenido.imagen.url(:thumb) %>
+			</p>
+		</section>
+	</aside>
+</div>

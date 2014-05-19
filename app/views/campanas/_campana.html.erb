@@ -1,0 +1,13 @@
+<li>
+	<span class="content"><%= campana.name %> |
+  						Meta <%= campana.goal %> |
+ 					   	Campaing goal <%= campana.goal %> |
+						Status <%= campana.status %> |
+						Total de contenidos <%= campana.contenidos.count %>
+	</span>  
+	<span class="timestamp">| Created <%= time_ago_in_words(campana.created_at) %> ago. 
+		<%= link_to "Ir a campana", campana_path(campana) %>
+		<%= link_to "Monitorear la campana", contenidos_path %>
+	</span>
+
+</li>

@@ -1,0 +1,36 @@
+<% provide(:title, 'Editar contenido') %>
+<h1>Editar Contenido</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@contenido) do |f| %>
+      <%#= render 'shared/error_messages' %>
+
+      <%= f.label :campana_id %>
+      <%= f.number_field :campana_id %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+	  
+      <%= f.label :tipo %>
+      <%= f.number_field :tipo %>
+	  
+      <%= f.label :provider %>
+      <%= f.number_field :provider %>
+
+      <%= f.label :category_id %>
+      <%= f.number_field :category_id %>	  
+	  
+      <%= f.label :status %>
+      <%= f.number_field :status %>
+	  
+	  <%= f.file_field :imagen %>
+	  
+	  <%= f.submit "Editar", class: "btn btn-large btn-primary" %>
+	  
+    <% end %>
+
+NEED TO ADD THE TIME SELECTOR FOR CONTENT END TIME
+
+  </div>
+</div>

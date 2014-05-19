@@ -1,0 +1,23 @@
+<% provide(:title, 'Todos las campanas') %>
+<h1>Administracion de campanas</h1>
+
+<div class="row">
+	<aside class="span4">
+		<section>
+			<h1>Listado de campanas</h1>
+			<span><%= link_to "Crear una nueva campana", new_campana_path%></span>			
+		</section>
+	</aside>
+	<aside class="span8"><div>
+	<%= will_paginate %>
+
+	<ul class="users">
+	  <% @campanas.each do |campana| %>
+	    <%= render campana %>
+	  <% end %>
+	</ul>
+
+	<%= will_paginate %>
+</div>
+	</aside>
+</div>

@@ -1,0 +1,24 @@
+<% provide(:title, 'Todos los contenidos') %>
+<h1>Todos los contenido</h1>
+
+<div class="row">
+	<aside class="span4">
+		<section>
+			<h1>Listado de contenidos</h1>
+			<span><%= link_to "Crear un nuevo contenido", new_contenido_path%></span>
+		</section>
+	</aside>
+	<aside class="span8">
+		<div>
+			<%= will_paginate %>
+
+			<ul class="users">
+			  <% @contenidos.each do |contenido| %>
+			    <%= render contenido %>
+			  <% end %>
+			</ul>
+
+			<%= will_paginate %>
+		</div>
+	</aside>
+</div>

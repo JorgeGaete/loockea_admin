@@ -1,0 +1,34 @@
+<%= provide(:title, @campana.name)%>
+
+<div class="row">
+	<aside class="span4">
+		<section>
+			<h1>
+				Contenidos de la campana <%= @campana.name%> 
+				(<%= @contenidos.count %>)
+			</h1>
+			
+			<section>
+				<span>Cliente: 				<%= @campana.client %></span>
+				<span>Meta de la campana: 	<%= @campana.goal %></span>
+				<span>Tipo de campana:		<%= @campana.tipo %></span>				
+				<span>Estatus actual:		<%= @campana.status %></span>
+				<span>Fecha de creacion:	<%= @campana.created_at %></span>
+				<section>
+					<span><%= link_to "Editar esta campana", edit_campana_path(@campana)%></span>
+					<span><%= link_to "Ir a todas las campanas", campanas_path %></span>
+				</section>
+			</section>
+		</section>
+	</aside>
+	<div class="span8">
+		<% if @contenidos.any? %>
+			<h3>Listado de contenidos</h3>
+			<ol class="contenido">
+				<%= render @contenidos %>
+			</ol>
+			
+			<%= will_paginate @contenidos%>
+		<% end %>
+	</div>
+</div>

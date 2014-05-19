@@ -1,18 +1,32 @@
 LoockeaAdmin::Application.routes.draw do
-
+  
   resources :admins
-  resources :sessions, only: [:new, :create, :destroy]
-
+  resources :campanas
+  resources :contenidos
+  resources :sessions,    only: [:new, :create, :destroy]
+  
   root  'admin_navegation#home'
   
   match '/help',      to: 'admin_navegation#help',      via: 'get'
-  match '/campanas',  to: 'admin_navegation#campanas',  via: 'get'
-  match '/contenidos',to: 'admin_navegation#contenidos',via: 'get'
+  match '/campanas',  to: 'campanas#index',             via: 'get'
+  match '/contenidos',to: 'contenidos#index',           via: 'get'
   match '/perfiles',  to: 'admin_navegation#perfiles',  via: 'get'
   
   match '/signup',    to: 'admins#new',                 via: 'get'
   match '/signin',    to: 'sessions#new',               via: 'get'
   match '/signout',   to: 'sessions#destroy',           via: 'delete'
+  
+  match '/campana/monitor',  to: 'campanas#monitor',    via: 'get'
+  
+  #get 'contenidos/:id/edit' => 'contenidos#edit'
+
+  #get 'contenidos/:id' => 'contenidos#show'
+  
+#  get "contenidos/new"
+#  get "campanas/new"
+  
+#  get "contenidos/show"
+#  get "contenidos/create"
   
   # See how all your routes lay out with "rake routes".
 

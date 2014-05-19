@@ -56,12 +56,12 @@ class AdminsController < ApplicationController
   
   #Before filters
   
-  def signed_in_admin
-    unless signed_in?
-      store_location
-      redirect_to signin_url, notice: "Porfavor logeate." unless signed_in?
-    end
-  end
+#  def signed_in_admin
+#    unless signed_in?
+#      store_location
+#      redirect_to signin_url, notice: "Porfavor logeate." unless signed_in?
+#    end
+#  end
   
   def correct_admin
     @admin = Admin.find(params[:id])
