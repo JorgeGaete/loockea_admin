@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140519054045) do
+ActiveRecord::Schema.define(version: 20140519084844) do
 
   create_table "admins", force: true do |t|
     t.string   "name"
@@ -25,6 +25,13 @@ ActiveRecord::Schema.define(version: 20140519054045) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["remember_token"], name: "index_admins_on_remember_token"
+
+  create_table "campana_contenidos", force: true do |t|
+    t.integer  "campana_id"
+    t.integer  "contenidos_id", limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "campanas", force: true do |t|
     t.integer  "contenido_id"
@@ -51,8 +58,30 @@ ActiveRecord::Schema.define(version: 20140519054045) do
     t.string   "imagen_content_type"
     t.integer  "imagen_file_size"
     t.datetime "imagen_updated_at"
+    t.integer  "profile_id"
   end
 
   add_index "contenidos", ["campana_id", "created_at"], name: "index_contenidos_on_campana_id_and_created_at"
+
+  create_table "profiles", force: true do |t|
+    t.binary   "sports"
+    t.binary   "fashion_beauty"
+    t.binary   "news_current"
+    t.binary   "art_design"
+    t.binary   "tecnology"
+    t.binary   "outdoor_running"
+    t.binary   "pictures_images"
+    t.binary   "gossips"
+    t.binary   "fun_memes"
+    t.binary   "finance_economics"
+    t.binary   "business_enterpreneurship"
+    t.binary   "music"
+    t.binary   "movies_series_theater"
+    t.binary   "travel"
+    t.binary   "to_do_culture"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+  end
 
 end

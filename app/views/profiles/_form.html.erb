@@ -1,0 +1,83 @@
+<%= form_for(@profile) do |f| %>
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% @profile.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :sports %><br>
+    <%= f.text_field :sports %>
+  </div>
+  <div class="field">
+    <%= f.label :fashion_beauty %><br>
+    <%= f.text_field :fashion_beauty %>
+  </div>
+  <div class="field">
+    <%= f.label :news_current %><br>
+    <%= f.text_field :news_current %>
+  </div>
+  <div class="field">
+    <%= f.label :art_design %><br>
+    <%= f.text_field :art_design %>
+  </div>
+  <div class="field">
+    <%= f.label :tecnology %><br>
+    <%= f.text_field :tecnology %>
+  </div>
+  <div class="field">
+    <%= f.label :outdoor_running %><br>
+    <%= f.text_field :outdoor_running %>
+  </div>
+  <div class="field">
+    <%= f.label :pictures_images %><br>
+    <%= f.text_field :pictures_images %>
+  </div>
+  <div class="field">
+    <%= f.label :gossips %><br>
+    <%= f.text_field :gossips %>
+  </div>
+  <div class="field">
+    <%= f.label :fun_memes %><br>
+    <%= f.text_field :fun_memes %>
+  </div>
+  <div class="field">
+    <%= f.label :finance_economics %><br>
+    <%= f.text_field :finance_economics %>
+  </div>
+  <div class="field">
+    <%= f.label :business_enterpreneurship %><br>
+    <%= f.text_field :business_enterpreneurship %>
+  </div>
+  <div class="field">
+    <%= f.label :music %><br>
+    <%= f.text_field :music %>
+  </div>
+  <div class="field">
+    <%= f.label :movies_series_theater %><br>
+    <%= f.text_field :movies_series_theater %>
+  </div>
+  <div class="field">
+    <%= f.label :travel %><br>
+    <%= f.text_field :travel %>
+  </div>
+  <div class="field">
+    <%= f.label :to_do_culture %><br>
+    <%= f.text_field :to_do_culture %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

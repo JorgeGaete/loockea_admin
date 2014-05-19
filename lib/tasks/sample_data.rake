@@ -6,8 +6,8 @@ namespace :db do
                   password: "foobar",
                   password_confirmation: "foobar",
                   super_admin: true)
-
-    5.times do |n|
+                  
+    2.times do |n|
       name = Faker::Name.name
       email = "example-#{n+1}@example.com"
       password = "password"
@@ -17,8 +17,8 @@ namespace :db do
                     password_confirmation: password)
     end
     
-    10.times do |n|
-      Campana.create!(content_id:      1,
+    2.times do |n|
+      Campana.create!(contenido_id:      1,
                       name:           "campana_#{n+1}",
                       tipo:            1,
                       client:          "cliente_#{n+1}",
@@ -27,9 +27,9 @@ namespace :db do
                       )                
     end
     
-    campana = Campana.all(limit: 5)
-    50.times do
-      name = Faker::Lorem.sentence(5)
+    campana = Campana.all(limit: 2)
+    5.times do
+      name = Faker::Lorem.sentence(1)
       campana.each { |campana| campana.contenidos.create!(name: name, status: 1) }
     end
   end

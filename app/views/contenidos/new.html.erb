@@ -3,11 +3,14 @@
 
 <div class="row">
   <div class="span6 offset3">
-    <%= form_for @contenido, :url => users_path, :html => { :multipart => true } do |f| %>
+	  <%= form_for(@contenido) do |f| %>
       <%#= render 'shared/error_messages' %>
 
       <%= f.label :campana_id %>
       <%= f.number_field :campana_id %>
+
+	  <%= f.label :profile_id %>
+	  <%= f.collection_select :profile_id ,@profiles,:id,:profiles_dropdown %>
 
       <%= f.label :name %>
       <%= f.text_field :name %>
@@ -24,7 +27,7 @@
       <%= f.label :status %>
       <%= f.number_field :status %>
 	  
-	  <%= form.file_field :imagen %>
+	  <%= f.file_field :imagen %>
 	  
 	  <%= f.submit "Crear", class: "btn btn-large btn-primary" %>
 	  

@@ -7,6 +7,7 @@ class CampanasController < ApplicationController
   
   def edit
     @campana = Campana.find(params[:id])
+    @contenidos = Contenido.all
   end
   
   def update

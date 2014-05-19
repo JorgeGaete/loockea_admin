@@ -1,5 +1,7 @@
 LoockeaAdmin::Application.routes.draw do
   
+  resources :profiles
+
   resources :admins
   resources :campanas
   resources :contenidos

@@ -16,11 +16,13 @@ class ContenidosController < ApplicationController
   
   def edit
     @contenido = Contenido.find(params[:id])
+    @campanas = Campana.all
+    @profiles = Profile.all
   end
 
   def show
     @contenido = Contenido.find(params[:id])
-#    @contenidos = @campana.contenidos.paginate(page: params[:page])
+    #@contenidos = @campana.contenidos.paginate(page: params[:page])
   end
 
   def index
@@ -46,7 +48,7 @@ class ContenidosController < ApplicationController
   private 
   
   def contenido_params
-    params.require(:contenido).permit(:campana_id, :name, :tipo, :provider, :category_id, :status, :imagen)
+    params.require(:contenido).permit(:campana_id, :name, :tipo, :provider, :category_id, :status, :imagen, :profile_id)
   end
   
   def correct_admin

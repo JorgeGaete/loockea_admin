@@ -6,8 +6,14 @@
     <%= form_for(@contenido) do |f| %>
       <%#= render 'shared/error_messages' %>
 
-      <%= f.label :campana_id %>
-      <%= f.number_field :campana_id %>
+      <%#= f.label :campana_id %>
+      <%#= f.number_field :campana_id %>
+
+	  <%= f.label :campana_id %>
+	  <%= f.collection_select :campana_id ,@campanas,:id,:campanas_dropdown %>
+	  
+	  <%= f.label :profile_id %>
+	  <%= f.collection_select :profile_id ,@profiles,:id,:profiles_dropdown %>
 
       <%= f.label :name %>
       <%= f.text_field :name %>
@@ -23,7 +29,7 @@
 	  
       <%= f.label :status %>
       <%= f.number_field :status %>
-	  
+	  	  
 	  <%= f.file_field :imagen %>
 	  
 	  <%= f.submit "Editar", class: "btn btn-large btn-primary" %>

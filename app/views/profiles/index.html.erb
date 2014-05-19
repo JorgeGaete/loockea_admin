@@ -1,0 +1,57 @@
+<h1>Listing profiles</h1>
+
+<table>
+  <thead>
+    <tr>
+	  <th>Nombre</td>		
+      <th>Sports</th>
+      <th>Fashion beauty</th>
+      <th>News current</th>
+      <th>Art design</th>
+      <th>Tecnology</th>
+      <th>Outdoor running</th>
+      <th>Pictures images</th>
+      <th>Gossips</th>
+      <th>Fun memes</th>
+      <th>Finance economics</th>
+      <th>Business enterpreneurship</th>
+      <th>Music</th>
+      <th>Movies series theater</th>
+      <th>Travel</th>
+      <th>To do culture</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @profiles.each do |profile| %>
+      <tr>
+		<td><%= profile.name %></td>
+        <td><%= profile.sports %></td>
+        <td><%= profile.fashion_beauty %></td>
+        <td><%= profile.news_current %></td>
+        <td><%= profile.art_design %></td>
+        <td><%= profile.tecnology %></td>
+        <td><%= profile.outdoor_running %></td>
+        <td><%= profile.pictures_images %></td>
+        <td><%= profile.gossips %></td>
+        <td><%= profile.fun_memes %></td>
+        <td><%= profile.finance_economics %></td>
+        <td><%= profile.business_enterpreneurship %></td>
+        <td><%= profile.music %></td>
+        <td><%= profile.movies_series_theater %></td>
+        <td><%= profile.travel %></td>
+        <td><%= profile.to_do_culture %></td>
+        <td><%= link_to 'Show', profile %></td>
+        <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+        <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Profile', new_profile_path %>
